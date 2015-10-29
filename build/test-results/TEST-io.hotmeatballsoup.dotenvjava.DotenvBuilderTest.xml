@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2015-10-29T14:36:09" hostname="mac-ie-zh" time="0.005">
+  <properties/>
+  <testcase name="if_fail_on_missing_configs_is_set_then_get_throws_exception_if_not_defined" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.001"/>
+  <testcase name="get_reads_env_var_before_looking_in_dotenv" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.0"/>
+  <testcase name="validate_throws_exception_if_dotenv_does_not_exist" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.0"/>
+  <testcase name="values_with_quotes_get_loaded_with_quotes" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.0"/>
+  <testcase name="values_with_null_get_loaded_as_null_ref" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.0"/>
+  <testcase name="double_slash_comments_are_ignored" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.0"/>
+  <testcase name="validate_throws_exception_if_dotenv_does_not_contain_valid_keyvalue_pairs" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.0"/>
+  <testcase name="has_comments_are_ignored" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.0"/>
+  <testcase name="full_dsl_throws_no_exceptions_on_build" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.0"/>
+  <testcase name="if_env_var_not_defined_then_get_looks_in_dot_env" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.0"/>
+  <testcase name="multiple_keys_can_be_referenced_and_resolved_inside_values" classname="io.hotmeatballsoup.dotenvjava.DotenvBuilderTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

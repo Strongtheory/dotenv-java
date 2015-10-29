@@ -1,0 +1,77 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+group = 'io.hotmeatballsoup'
+
+dependencies {
+	compile(
+		'org.slf4j:slf4j-api:1.7.12',
+		'org.apache.commons:commons-lang3:3.4'
+	)
+	
+	testCompile 'junit:junit:4.12'
+}
+
+jar {
+	baseName = 'dotenv-java'
+}
+
+task writePom << {
+	pom {
+		project {
+			groupId project.group
+			artifactId 'dotenv-java'
+			version version
+
+			inceptionYear '2015'
+			licenses {
+				license {
+					name 'dotenv-java'
+					distribution 'Pure Java implementation of dotenv.'
+				}
+			}
+		}
+	}.writeTo("build/libs/pom.xml")
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+	classifier = 'sources'
+	from sourceSets.main.allSource
+}
+
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//	classifier = 'javadoc'
+//	from javadoc.destinationDir
+//}
+
+artifacts {
+	archives sourcesJar
+//	archives javadocJar
+}
+
+task buildAll(dependsOn: [build, writePom])
+
+task pubLocal(dependsOn: [buildAll, install])
+
+artifacts {
+	archives(file("${buildDir}/libs/dotenv-java-${version}.jar")) {
+		name "dotenv-java"
+		classifier ""
+	}
+}
+
+repositories {
+	jcenter()
+	mavenLocal()
+	mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.4'
+}
